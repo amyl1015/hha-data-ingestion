@@ -17,7 +17,6 @@ print("\n\n\n")
 # Section 2
 #-----------
 
-#Is this all?
 import requests 
 import json
 print("Section Two")
@@ -27,15 +26,15 @@ print(apiDataset)
 print("\n\n\n")
 
 #section 3
-#from google.cloud import bigquery ## import bigquery for bigquery files
+from google.cloud import bigquery ## import bigquery for bigquery files
 ### BIGQUERY
 print("Section Three")
 ## first need to load api key that you created based on readme instructions
 # connect to bigquery, be sure to update the name of your file, this is currently mine
-#client = bigquery.Client.from_service_account_json('Users/amyliu/documents/HHA-507/amy-507-844555269e89.json') ## create bigquery client
+client = bigquery.Client.from_service_account_json('Users/amyliu/documents/HHA-507/amy-507-844555269e89.json') ## create bigquery client
 ## query public dataset
-#query_job = client.query("SELECT * FROM `bigquery-public-data.covid19_open_data` LIMIT 100") ## query public dataset
+query_job = client.query("SELECT * FROM `bigquery-public-data.covid19_open_data'py LIMIT 100") ## query public dataset
 ## get results
-#results = query_job.result() ## get results
+results = query_job.result() ## get results
 ## putresults into dataframe
 #df = pd.DataFrame(results.to_dataframe()) ## put results into dataframe
